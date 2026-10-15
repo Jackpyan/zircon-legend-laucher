@@ -477,7 +477,7 @@ namespace Launcher
 
             Connection.Enqueue(new C.LoginSimple()
             {
-                CheckSum = "",
+                CheckSum = Functions.GetDeviceCheckSum(),
                 Password = password,
                 EMailAddress = Config.Account,
             });
@@ -613,7 +613,7 @@ namespace Launcher
                 EMailAddress = account,
                 Password = password,
                 RealName = "",
-                CheckSum = "",
+                CheckSum = Functions.GetDeviceCheckSum(),
                 Referral = "",
             });
         }
@@ -626,7 +626,7 @@ namespace Launcher
                 CurrentPassword = original_password,
                 EMailAddress = account,
                 NewPassword = new_password,
-                CheckSum = ""
+                CheckSum = Functions.GetDeviceCheckSum()
             });
         }
 
@@ -714,7 +714,7 @@ namespace Launcher
                 HairType = 1,
                 HairColour = Color.FromArgb(255, 0, 0, 0),
                 ArmourColour = cls == MirClass.Assassin ? Color.FromArgb(0) : Color.FromArgb(255, 0, 0, 0),
-                CheckSum = "",
+                CheckSum = Functions.GetDeviceCheckSum(),
             });
         }
         public static void ResponseCreateCharacter(S.NewCharacter p)
@@ -766,7 +766,7 @@ namespace Launcher
             Connection.Enqueue(new C.DeleteCharacter()
             {
                 CharacterIndex = index,
-                CheckSum = "",
+                CheckSum = Functions.GetDeviceCheckSum(),
             });
         }
         public static void ResponseDeleteCharacter(S.DeleteCharacter p)
